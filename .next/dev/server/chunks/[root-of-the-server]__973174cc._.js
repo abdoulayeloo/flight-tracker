@@ -64,11 +64,21 @@ async function GET(request) {
     if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
     ;
     try {
-        const response = await fetch(`http://api.aviationstack.com/v1/flights?access_key=${API_KEY}&flight_iata=${flightIata}&limit=1`);
+        const url = `http://api.aviationstack.com/v1/flights?access_key=${API_KEY}&flight_iata=${flightIata}&limit=1`;
+        console.log(`Fetching from: ${url.replace(API_KEY, '***')}`);
+        const response = await fetch(url);
+        const responseText = await response.text();
+        console.log('Upstream status:', response.status);
+        // console.log('Upstream response:', responseText); // Uncomment for full debug if needed
         if (!response.ok) {
-            throw new Error(`Upstream API error: ${response.statusText}`);
+            throw new Error(`Upstream API error: ${response.status} ${response.statusText} - ${responseText.substring(0, 100)}`);
         }
-        const data = await response.json();
+        let data;
+        try {
+            data = JSON.parse(responseText);
+        } catch (e) {
+            throw new Error(`Invalid JSON from upstream: ${responseText.substring(0, 100)}...`);
+        }
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json(data);
     } catch (error) {
         console.error('Flight API Error:', error);

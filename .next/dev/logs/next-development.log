@@ -1,5 +1,57 @@
-[00:00:06.313] Server  LOG      ✓ Ready in 5.6s
-[00:00:10.355] Server  LOG        Reload env: .env
-[00:00:13.801] Server  LOG      ○ Compiling / ...
-[00:00:15.238] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:26.212] Server  ERROR    ⨯ Error: export const dynamic = "force-static"/export const revalidate not configured on route "/api/flights" with "output: export". See more info here: https://nextjs.org/docs/advanced-features/static-html-export
+[00:00:02.122] Server  LOG      ✓ Ready in 1711ms
+[00:00:05.232] Server  LOG      ○ Compiling /[lang] ...
+[00:00:09.350] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:18.984] Server  LOG     Fetching from: http://api.aviationstack.com/v1/flights?access_key=***&flight_iata=AAL120&limit=1
+[00:00:19.500] Server  LOG     Upstream status: 200
+[00:00:23.978] Server  LOG     Fetching from: http://api.aviationstack.com/v1/flights?access_key=***&flight_iata=AA120&limit=1
+[00:00:24.227] Server  LOG     Upstream status: 200
+[00:00:48.771] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:49.602] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/fr" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <RootLayout>
+                        <html lang="fr">
+                          <body
+                            className="geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__var..."
+-                           cz-shortcut-listen="true"
+                          >
+                  ...
+
+[00:00:54.415] Server  LOG     Fetching from: http://api.aviationstack.com/v1/flights?access_key=***&flight_iata=AA122&limit=1
+[00:00:54.854] Server  LOG     Upstream status: 200
+[00:00:58.918] Server  LOG     Fetching from: http://api.aviationstack.com/v1/flights?access_key=***&flight_iata=AA100&limit=1
+[00:00:59.178] Server  LOG     Upstream status: 200
+[00:01:14.810] Server  LOG     Fetching from: http://api.aviationstack.com/v1/flights?access_key=***&flight_iata=AB100&limit=1
+[00:01:15.333] Server  LOG     Upstream status: 200
+[00:01:20.675] Server  LOG     Fetching from: http://api.aviationstack.com/v1/flights?access_key=***&flight_iata=AA130&limit=1
+[00:01:20.901] Server  LOG     Upstream status: 200
+[00:01:24.669] Server  LOG     Fetching from: http://api.aviationstack.com/v1/flights?access_key=***&flight_iata=AA100&limit=1
+[00:01:24.886] Server  LOG     Upstream status: 200
+[00:01:29.555] Server  LOG     Fetching from: http://api.aviationstack.com/v1/flights?access_key=***&flight_iata=AA120&limit=1
+[00:01:29.983] Server  LOG     Upstream status: 200
+[00:01:58.032] Server  LOG     Fetching from: http://api.aviationstack.com/v1/flights?access_key=***&flight_iata=AA100&limit=1
+[00:01:58.446] Server  LOG     Upstream status: 200
