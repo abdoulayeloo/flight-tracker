@@ -1,0 +1,5 @@
+[00:00:06.313] Server  LOG      ✓ Ready in 5.6s
+[00:00:10.355] Server  LOG        Reload env: .env
+[00:00:13.801] Server  LOG      ○ Compiling / ...
+[00:00:15.238] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:26.212] Server  ERROR    ⨯ Error: export const dynamic = "force-static"/export const revalidate not configured on route "/api/flights" with "output: export". See more info here: https://nextjs.org/docs/advanced-features/static-html-export

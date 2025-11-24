@@ -27,8 +27,7 @@ export default function FlightSearch({ dictionary, lang }: FlightSearchProps) {
         setFlight(null);
 
         try {
-            const API_KEY = process.env.NEXT_PUBLIC_AVIATION_API_KEY;
-            const response = await fetch(`http://api.aviationstack.com/v1/flights?access_key=${API_KEY}&flight_iata=${flightNumber}&limit=1`);
+            const response = await fetch(`/api/flights?flight_iata=${flightNumber}`);
             const data = await response.json();
 
             if (data.error) {
